@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>{{title}} | Keep Ship Simple</title>
+    <meta name="title" content="{{title}} | Easy to build web boilerplate">
+    <meta name="description" content="{{description}}" />
+
+    <!-- Open Graph / Facebook / Slack -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hop2.io/">
+    <meta property="og:title" content="KSS | Easy to build web boilerplate">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:image" content="https://hop2.io/og-image.jpg"> <!-- Replace with your preview image -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hop2.io/">
+    <meta name="twitter:title" content="KSS | Easy to build web boilerplate">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="https://hop2.io/og-image.jpg"> <!-- Replace with your preview image -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://kss.io/">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="min-h-screen flex flex-col inter-tight-400">
+    <header>
+      {{> public-navigation}}
+      <div class="ml-auto">
+        {{#if user}}
+        <div class="flex items-center gap-4">
+          <a href="/account/phrases/create" class="button !mt-0 hidden md:block">Create a new phrase</a>
+          {{> user-dropdown}}
+          </div>
+        {{else}}
+          {{> logged-out-navigation}}
+        {{/if}}
+        </div>
+      </div>
+    </header>
+    <main class="py-10 {{#if mainClass}} {{mainClass}} {{/if}} flex-1 px-4 xl:px-0">
+      {{{body}}}
+    </main>
+    <footer>
+      <p>
+        &copy; 2025 KSS. All rights reserved.
+      </p>
+    </footer>
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

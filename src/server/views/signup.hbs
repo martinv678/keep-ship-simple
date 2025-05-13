@@ -1,0 +1,40 @@
+<div class="w-full max-w-lg mx-auto bg-white p-10 rounded-md shadow">
+
+  <h1 class="text-center inter-tight-700 text-3xl mb-1">Sign up</h1>
+  <h2 class="text-center text-gray-500 text-lg max-w-3xl mx-auto mb-5">
+    Create an account to get started
+  </h2>
+  <form action="/signup" method="POST" class="space-y-4">
+    <div>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="input"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div>
+
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="input"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="w-full py-4 px-6 bg-indigo-600 hover:bg-indigo-500 transition-colors rounded-md text-white font-bold text-sm mt-2"
+    >Submit</button>
+  </form>
+  <div class="text-center text-gray-500 text-sm mt-4">
+    <a
+      href="/signup"
+      class="hover:underline hover:text-indigo-600 inter-tight-500"
+    >Sign up</a>
+  </div>
+</div>

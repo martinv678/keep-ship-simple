@@ -1,0 +1,47 @@
+<div class="max-w-screen-lg mx-auto px-4">
+  <div class="md:flex items-center justify-between">
+    <h1 class="text-2xl md:text-4xl lg:text-5xl mb-3">Account</h1>
+    <a
+      href="/account/phrases/create"
+      class="inline-block py-4 px-6 bg-indigo-600 hover:bg-indigo-500 transition-colors rounded-md text-white font-bold text-sm"
+    >Create a new phrase</a>
+  </div>
+  <div class="space-y-4 mt-10">
+    {{#each phrases}}
+      <div
+        class="border border-gray-200 rounded-md p-4 flex justify-between items-center bg-white"
+      >
+        <div>
+          <p>
+            <a
+              href="/account/phrases/{{_id}}/edit"
+              class="hover:underline hover:text-indigo-600 transition-colors inter-tight-600"
+            >
+              {{word1}}.{{word2}}.{{word3}}
+            </a>
+          </p>
+          <p class="text-gray-500 text-sm">{{destinationUrl}}</p>
+        </div>
+        <a
+          href="/account/phrases/{{_id}}/edit"
+          class="size-10 flex items-center justify-center hover:bg-indigo-100 rounded-full transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5"
+          ><path
+              d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+            /><path d="m15 5 4 4" /></svg>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</div>

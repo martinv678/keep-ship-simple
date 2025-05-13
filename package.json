@@ -1,0 +1,51 @@
+{
+  "name": "@hop2/website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev:server": "tsx watch src/server/app.ts --tsconfig ./src/server/tsconfig.json",
+    "dev:styles": "npx @tailwindcss/cli -i ./src/client/styles/main.css -o ./public/styles.css --watch",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:styles\"",
+    "build:copy-views": "cp -r src/server/views dist/server",
+    "build:client": "npx @tailwindcss/cli -i ./src/client/styles/main.css -o ./public/styles.css",
+    "build:server": "tsc -p src/server",
+    "build": "npm run clean && npm run build:client && npm run build:server && npm run build:copy-views",
+    "start": "node dist/server/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "bcrypt": "^5.1.1",
+    "cookie": "^1.0.2",
+    "cookie-parser": "^1.4.7",
+    "cookie-session": "^2.1.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "16.5.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "morgan": "^1.10.0",
+    "stripe": "^18.0.0",
+    "tailwindcss": "^4.1.4",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie": "^0.6.0",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cookie-session": "^2.0.49",
+    "@types/express": "^5.0.1",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/morgan": "^1.9.9",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
