@@ -27,6 +27,11 @@ app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use((_, res, next) => {
+  res.locals.APP_URL = process.env.APP_URL;
+  next();
+});
+
 // Stripe webhook MUST be before body parser
 app.use("/stripe", stripeRouter);
 
